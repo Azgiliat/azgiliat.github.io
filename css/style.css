@@ -1853,3 +1853,6 @@ body {
      background-color: rgba(32, 32, 32, 0.5);
      z-index: 9;
 }
+iframe {
+  border: 0px;
+}
