@@ -32,10 +32,10 @@
                 <ul class="user_navigation">
                     <li>
                         <button type="button" class="user_button search_button">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17">
-                  <path fill="#FFF" d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z"/>
-              </svg>
-            </button>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17">
+                                <path fill="#FFF" d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z"/>
+                            </svg>
+                        </button>
                         <section class="modal search_form">
                             <h2 class="visually_hidden">Поиск по сайту</h2>
                             <form action="https://echo.htmlacademy.ru" method="post">
@@ -46,7 +46,7 @@
                         </section>
                     </li>
                     <li>
-                        <button type="button" class="user_button login_button">
+                        <a href="login.html" class="user_button login_button">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               	 width="21px" height="19px" viewBox="0 0 21 19" enable-background="new 0 0 21 19" xml:space="preserve">
 
@@ -57,7 +57,7 @@
               </g>
               </svg>
               <span>Вход</span>
-              </button>
+            </a>
                         <section class="modal login_form">
                             <h2 class="visually_hidden">Вход на сайт</h2>
                             <form action="https://echo.htmlacademy.ru" method="post">
@@ -75,7 +75,6 @@
                                     <a href="new_user.html" class="login_link">Новая регистрация</a>
                                 </div>
                             </form>
-
                         </section>
                     </li>
                     <li>
@@ -88,7 +87,7 @@
                                         <button type="button" class="delete_product">Удалить продукт из корзины</button>
                                     </td>
                                     <td>
-                                        <img class="little_ice_cream" src="img/ice_cream_photos/creamy_orange.jpg" alt="Пломбир с апельсиновым джемом">
+                                        <img class="little_ice_cream" src="img/ice_cream_photos/creamy_orange.jpg" alt="Пломбир с апельсиновым джемом" width="33" height="33">
                                     </td>
                                     <td>
                                         <a class="basket_product" href="#">Пломбир с апельсиновым джемом</a>
@@ -106,7 +105,7 @@
                                         <button type="button" class="delete_product">Удалить продукт из корзины</button>
                                     </td>
                                     <td>
-                                        <img class="little_ice_cream" src="img/ice_cream_photos/creamy_strawberry.jpg" alt="Клубничный пломбир с присыпкой из белого шоколада">
+                                        <img class="little_ice_cream" src="img/ice_cream_photos/creamy_strawberry.jpg" alt="Клубничный пломбир с присыпкой из белого шоколада" width="33" height="33">
                                     </td>
                                     <td class="cell_1">
                                         <a class="basket_product" href="#">Клубничный пломбир с присыпкой из белого шоколада</a>
@@ -145,15 +144,12 @@
             <form class="filter_form" action="https://echo.htmlacademy.ru" method="post">
                 <div class="sorting">
                     <span class="filter_headlines">Сортировка:</span>
-                    <div class="filter_back sorting_back">
-                        <span>по популярности</span>
-                        <ul class="sorting_values">
-                            <li class="current_sorting_link"><a class="sorting_link" href="#">по популярнсти</a></li>
-                            <li><a class="sorting_link" href="#">сначала недорогие</a></li>
-                            <li><a class="sorting_link" href="#">сначала дорогие</a></li>
-                            <li><a class="sorting_link" href="#">по жирности</a></li>
-                        </ul>
-                    </div>
+                    <select class="filter_back" name="sorting_select">
+                        <option class="current_sorting_link" value="popularity">по популярности</option>
+                        <option class="sorting_values" value="cheap_first">сначала недорогие</option>
+                        <option class="sorting_values" value="expensive_first">сначала дорогие</option>
+                        <option class="sorting_values" value="fat_%">по жирности</option>
+                    </select>
                 </div>
                 <div class="price_range">
                     <span class="filter_headlines">Цена: 100 руб. - 500 руб.</span>
@@ -166,22 +162,22 @@
                     <span class="filter_headlines">Жирность:</span>
                     <div class="filter_back fat_filter">
                         <label class="fat_text">
-            <input class="fat_radio visually_hidden" type="radio" name="%" id="0%_fat">
+            <input class="fat_radio visually_hidden" type="radio" name="%" id="0%_fat" value="0_fat">
             <span></span>
             0%
           </label>
                         <label class="fat_text">
-            <input class="fat_radio visually_hidden" type="radio" name="%" id="10%_fat" checked>
+            <input class="fat_radio visually_hidden" type="radio" name="%" id="10%_fat" value="10_fat" checked>
             <span></span>
             до 10%
           </label>
                         <label class="fat_text">
-            <input class="fat_radio visually_hidden" type="radio" name="%" id="30%_fat">
+            <input class="fat_radio visually_hidden" type="radio" name="%" id="30%_fat" value="30_fat">
             <span></span>
-            30%
+            до 30%
           </label>
                         <label class="fat_text">
-            <input class="fat_radio visually_hidden" type="radio" name="%" id="30%+_fat">
+            <input class="fat_radio visually_hidden" type="radio" name="%" id="30%+_fat" value="30+_fat">
             <span></span>
             выше 30%
           </label>
@@ -191,29 +187,25 @@
                     <span class="filter_headlines">Наполнители:</span>
                     <div class="filter_back">
                         <label class="content_label">
-              <input class="visually_hidden" type="checkbox" name="content_checkbox" checked>
+              <input class="visually_hidden" type="checkbox" name="chocolate_content" checked>
               <span>шоколадные</span>
             </label>
                         <label class="content_label">
-              <input class="visually_hidden" type="checkbox" name="content_checkbox" checked>
+              <input class="visually_hidden" type="checkbox" name="sugar_content" checked>
                           <span>сахарные присыпки</span>
             </label>
                         <label class="content_label">
-              <input class="visually_hidden" type="checkbox" name="content_checkbox">
+              <input class="visually_hidden" type="checkbox" name="fruits">
                   <span>фрукты</span>
             </label>
                         <label class="content_label">
-              <input class="visually_hidden" type="checkbox" name="content_checkbox">
+              <input class="visually_hidden" type="checkbox" name="siroups">
               <span>сиропы</span>
             </label>
                         <label class="content_label">
-              <input class="visually_hidden" type="checkbox" name="content_checkbox">
+              <input class="visually_hidden" type="checkbox" name="jams">
               <span>джемы</span>
             </label>
-
-
-
-
                     </div>
                 </div>
                 <button class="filter_button" type="submit">Применить</button>
@@ -222,14 +214,12 @@
         <section class="products">
             <h2 class="visually_hidden">Товары</h2>
             <section class="product_card">
-
                 <a class="product_name" href="products/creamy_orange.html">
                     <h3>Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_orange.jpg" alt="Для любителей апельсинок">
+                <img src="img/ice_cream_photos/creamy_orange.jpg" alt="Для любителей апельсинок" height="267" width="267">
                 <span class="price"> 310₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -237,10 +227,9 @@
                 <a class="product_name" href="products/creamy_coffee.html">
                     <h3>Сливочно-кофейное с кусочками шоколада</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_coffee.jpg" alt="Для любителей кофе во всех его видах">
+                <img src="img/ice_cream_photos/creamy_coffee.jpg" alt="Для любителей кофе во всех его видах" height="267" width="267">
                 <span class="price">380₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -248,7 +237,7 @@
                 <a class="product_name" href="products/creamy_strawberry.html">
                     <h3>Сливочно-клубничное с присыпкой из белого шоколада</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_strawberry.jpg" alt="Для любителей клубники и белого шоколада">
+                <img src="img/ice_cream_photos/creamy_strawberry.jpg" alt="Для любителей клубники и белого шоколада" height="267" width="267">
                 <span class="price">355₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
                 </div>
@@ -259,21 +248,19 @@
                 <a class="product_name" href="products/creamy_caramel.html">
                     <h3>Сливочное крем-брюле с карамельной подливкой</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_caramel.jpg" alt="Для любителей карамели">
+                <img src="img/ice_cream_photos/creamy_caramel.jpg" alt="Для любителей карамели" height="267" width="267">
                 <span class="price">415₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
             <section class="product_card">
                 <a class="product_name" href="products/creamy_cowberry.html">
-                    <h3>Сливочное с брусничным джемом</h3>
+                    <h3 class="short_name">Сливочное с брусничным джемом</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_cowberry.jpg" alt="Для любителей брусники">
+                <img src="img/ice_cream_photos/creamy_cowberry.jpg" alt="Для любителей брусники" height="267" width="267">
                 <span class="price">325₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -281,10 +268,9 @@
                 <a class="product_name" href="products/creamy_blackberry.html">
                     <h3>Сливочно-черничное с цельными ягодами чреники</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_blackberry.jpg" alt="Для любителей черники">
+                <img src="img/ice_cream_photos/creamy_blackberry.jpg" alt="Для любителей черники" height="267" width="267">
                 <span class="price">410₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -292,10 +278,9 @@
                 <a class="product_name" href="products/creamy_lemon+caramel.html">
                     <h3>Сливочно-лимонное с карамельной присыпкой</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_lemon+caramel.jpg" alt="Лимон и карамель? У нас есть и такое">
+                <img src="img/ice_cream_photos/creamy_lemon+caramel.jpg" alt="Лимон и карамель? У нас есть и такое" height="267" width="267">
                 <span class="price">375₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -303,21 +288,19 @@
                 <a class="product_name" href="products/creamy_chocolate.html">
                     <h3>Сливочное с шоколадной стружкой</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_chocolate.jpg" alt="Сливочное с шоколадной стружкой. Классика на все времена!">
-                <span class="price">420₽</span><span class="weigth">/кг</span>
+                <img src="img/ice_cream_photos/creamy_chocolate.jpg" alt="Сливочное с шоколадной стружкой. Классика на все времена!" height="267" width="267">
+                <span class="price">320₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
             <section class="product_card">
                 <a class="product_name" href="products/creamy_vanilla_chocolate.html">
-                    <h3>Сливочно-ванильное с кусочками шоколада</h3>
+                    <h3 class="short_name">Сливочно-ванильное с кусочками шоколада</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_vanilla_chocolate.jpg" alt="Для сладкоежек">
+                <img src="img/ice_cream_photos/creamy_vanilla_chocolate.jpg" alt="Для сладкоежек" height="267" width="267">
                 <span class="price">440₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -325,10 +308,9 @@
                 <a class="product_name" href="products/creamy_menthol.html">
                     <h3>Сливочное с ментоловым сиропом</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_menthol.jpg" alt="Для любителей морозной свежести">
+                <img src="img/ice_cream_photos/creamy_menthol.jpg" alt="Для любителей морозной свежести" height="267" width="267">
                 <span class="price">435₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -336,10 +318,9 @@
                 <a class="product_name" href="products/creamy_dark_chocolate.html">
                     <h3>Сливочное с кусочками черного шоколада</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_dark_chocolate.jpg" alt="Для любителей нежности с нотками грусти">
+                <img src="img/ice_cream_photos/creamy_dark_chocolate.jpg" alt="Для любителей нежности с нотками грусти" height="267" width="267">
                 <span class="price">355₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
@@ -347,22 +328,21 @@
                 <a class="product_name" href="products/creamy_mint.html">
                     <h3>Сливочное с мятным сиропом</h3>
                 </a>
-                <img src="img/ice_cream_photos/creamy_mint.jpg" alt="Для мятных каркоманов">
+                <img src="img/ice_cream_photos/creamy_mint.jpg" alt="Для мятных каркоманов" height="267" width="267">
                 <span class="price">420₽</span><span class="weigth">/кг</span>
                 <div class="product_card_hover">
-
                 </div>
                 <a class="quick_look button" href="#">Быстрый просмотр</a>
             </section>
         </section>
         <div class="paginator">
-            <span></span>
+            <a class="prev_page" href="#"></a>
             <a class="current_page" href="#">1</a>
             <a class="other_page" href="creamy_2.html" aria-label="Вторая страница каталога мороженого">2</a>
             <a class="other_page" href="creamy_3.html" aria-label="Третья страница каталога мороженого">3</a>
             <a class="other_page" href="creamy_4.html" aria-label="Четвертая страница каталога мороженого">4</a>
             <a class="other_page" href="creamy_5.html" aria-label="Пятая страница каталога мороженого">5</a>
-            <a class="next_page" href="#next" aria-label="Следующая страница">></a>
+            <a class="next_page" href="#next" aria-label="Следующая страница"></a>
         </div>
     </main>
     <footer class="container">
@@ -379,7 +359,9 @@
             <li><a class="documents_links" href="environmental_standards.html">Экологические стандарты</a></li>
         </ul>
         <div class="developer">
-            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/icons/small_logo_htmlacademy.svg" alt="Наша любимая академия" width="108" height="39"> Сделано в HTMLAcademy<sup>©</sup>2019</a>
+            <a href="https://htmlacademy.ru/intensive/htmlcss">
+    <img src="img/icons/small_logo_htmlacademy.svg" width="108" height="39" alt="Наша любимая академия"></a>
+            <a href="https://htmlacademy.ru/intensive/htmlcss">Сделано в <span>HTMLAcademy</span> © 2019</a>
         </div>
     </footer>
 </body>
